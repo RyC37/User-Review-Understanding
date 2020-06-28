@@ -34,7 +34,7 @@ Python3 main.py
 
 **1. Good cases in Positive Feedbacks**
 
-<div style="width: 60%">
+
 | Topic 1 - Love the filters                                   |
 | :----------------------------------------------------------- |
 | great filters great details i love snapchat so much but idk how to do streaks |
@@ -42,6 +42,7 @@ Python3 main.py
 | snapchat does have cool and cute filters but most of the time when you click on some of these filters the app, once again, crashes |
 | love it but try to add new filters but really i love it i love selfies with snap |
 
+<div style="width: 60%">
 | Topic 2 - Takes good pictures                                |
 | :----------------------------------------------------------- |
 | i enjoy capturing pic                                        |
@@ -51,6 +52,7 @@ Python3 main.py
 | i have somuch fun with thefilters and takes the best photos  |
 | love the pictures it takes                                   |
 | love the filters!! and that it saves your pictures           |
+</div>
 
 | Topic 3 - Good way to connect with friends                   |
 | :----------------------------------------------------------- |
@@ -62,7 +64,7 @@ Python3 main.py
 | snap chat is very amazing it plays a roll in my life it cheers me when i am down it makes me enjoy my phone time it is worth your time if you don't have this app you living in the past |
 | this app is amazing it is very social you can talk to friends you can play games with friends and you can have a party together really fun if you want to follow me my name is chloe |
 | his app is fantastic ! i love talking to all my friends and taking photos and making funny videos this app is very useful but on the other side it takes a lot of space on your phone |
-</div>
+
 **2. Bad Cases in Positive Feedbacks**
 
 | Problem 1 - Failed to spit the long sentence                 |
