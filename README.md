@@ -34,7 +34,7 @@ Python3 main.py
 
 **1. Good cases in Positive Feedbacks**
 
-| <div style='text-align: left'>Topic 1 - Love the filters</div>                        |
+| <div style='float: left'>Topic 1 - Love the filters</div>    |
 | ------------------------------------------------------------ |
 | great filters great details i love snapchat so much but idk how to do streaks |
 | although at times it randomly changes filters mostly your favorite one but nonetheless, its a really really great app😊😍 |
