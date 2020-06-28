@@ -42,7 +42,7 @@ Python3 main.py
 | love it but try to add new filters but really i love it i love selfies with snap |
 
 | Topic 2 - Takes good pictures                                |
-| ------------------------------------------------------------ |
+| :----------------------------------------------------------- |
 | i enjoy capturing pic                                        |
 | snapchat captured amazing pictures                           |
 | this includes pictures i took today, very important memories |
@@ -52,7 +52,7 @@ Python3 main.py
 | love the filters!! and that it saves your pictures           |
 
 | Topic 3 - Good way to connect with friends                   |
-| ------------------------------------------------------------ |
+| :----------------------------------------------------------- |
 | it is a very good you can use filters talk to your best friends and others you can decorate your bitmoji and i just love the app if you are a major social media person you can take really nice pictures and really funny ones i'm post them on instagram but out of all these futures my favorite is |
 | this app is wonderfull i have got lots of charms here and also able to chat with friends and getting new charms is very interesting here in snapchat |
 | i love this app it is an awesome way to communicate has so many cool and fun features but i have one problem, my youtube my insta everything is working except for snapchat |
@@ -65,13 +65,13 @@ Python3 main.py
 **2. Bad Cases in Positive Feedbacks**
 
 | Problem 1 - Failed to spit the long sentence                 |
-| ------------------------------------------------------------ |
+| :----------------------------------------------------------- |
 | when i have almost full bars on my phone and connected to a strong wifi i can not post honesly you should take out snapchat because it doesn't belong in this world it also kills battery so fast i was at 40 percent and now im at 5 |
 | i'm having lots of bugs when trying to post on my story! if i record for more than 10 seconds and post it, it just keeps replaying the first 10 seconds over again until i stopped recording |
 | i love the filters but when i want to play btimoji party 🎉 they tell me no conection but there is i tried this many times but till now it is still telling me no conection but even i saw that the internet 📶 part is green and my phone tell me conected to wifi |
 
 | Problem 2 - Not specific                                     |
-| ------------------------------------------------------------ |
+| :----------------------------------------------------------- |
 | its a really good app but it freezez and glitches alot       |
 | overall though it's a good app that does what it's supposed to do |
 | it's a really good app but lots of drama                     |
@@ -84,7 +84,7 @@ Python3 main.py
 | would be great app however a load of shyte on android        |
 
 | Problem 3 - Wrong sentiment classification                   |
-| ------------------------------------------------------------ |
+| :----------------------------------------------------------- |
 | great app just a little bugs where i can't send snaps to people every once and a while |
 | fun app but it drains your battery way too much              |
 | best app for texting and photos but needs some bugs fixed still |
