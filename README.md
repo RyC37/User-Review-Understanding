@@ -42,7 +42,7 @@ Python3 main.py
 | snapchat does have cool and cute filters but most of the time when you click on some of these filters the app, once again, crashes |
 | love it but try to add new filters but really i love it i love selfies with snap |
 
-<div style="width: 60%">
+<div>
 | Topic 2 - Takes good pictures                                |
 | :----------------------------------------------------------- |
 | i enjoy capturing pic                                        |
