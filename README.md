@@ -28,12 +28,9 @@ Help product owners to understand user needs, by grouping and counting the pros 
 Python3 main.py
 ```
 
-
-
 ## Results
 
 **1. Good cases in Positive Feedbacks**
-
 
 | Topic 1 - Love the filters                                   |
 | :----------------------------------------------------------- |
@@ -42,7 +39,6 @@ Python3 main.py
 | snapchat does have cool and cute filters but most of the time when you click on some of these filters the app, once again, crashes |
 | love it but try to add new filters but really i love it i love selfies with snap |
 
-<div>
 | Topic 2 - Takes good pictures                                |
 | :----------------------------------------------------------- |
 | i enjoy capturing pic                                        |
@@ -52,7 +48,6 @@ Python3 main.py
 | i have somuch fun with thefilters and takes the best photos  |
 | love the pictures it takes                                   |
 | love the filters!! and that it saves your pictures           |
-</div>
 
 | Topic 3 - Good way to connect with friends                   |
 | :----------------------------------------------------------- |
