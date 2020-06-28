@@ -35,7 +35,7 @@ Python3 main.py
 **1. Good cases in Positive Feedbacks**
 
 | Topic 1 - Love the filters                                   |
-| ------------------------------------------------------------ |
+| :----------------------------------------------------------- |
 | great filters great details i love snapchat so much but idk how to do streaks |
 | although at times it randomly changes filters mostly your favorite one but nonetheless, its a really really great app😊😍 |
 | snapchat does have cool and cute filters but most of the time when you click on some of these filters the app, once again, crashes |
