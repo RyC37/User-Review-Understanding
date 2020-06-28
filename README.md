@@ -33,14 +33,14 @@ Python3 main.py
 **1. Good cases in Positive Feedbacks**
 
 | Topic 1 - Love the filters                                   |
-| :----------------------------------------------------------- |
+| :---------------------------------------------------------------------------------------------------------------------- |
 | great filters great details i love snapchat so much but idk how to do streaks |
 | although at times it randomly changes filters mostly your favorite one but nonetheless, its a really really great app😊😍 |
 | snapchat does have cool and cute filters but most of the time when you click on some of these filters the app, once again, crashes |
 | love it but try to add new filters but really i love it i love selfies with snap |
 
 | Topic 2 - Takes good pictures                                |
-| :----------------------------------------------------------- |
+| :---------------------------------------------------------------------------------------------------------------------- |
 | i enjoy capturing pic                                        |
 | snapchat captured amazing pictures                           |
 | this includes pictures i took today, very important memories |
@@ -50,7 +50,7 @@ Python3 main.py
 | love the filters!! and that it saves your pictures           |
 
 | Topic 3 - Good way to connect with friends                   |
-| :----------------------------------------------------------- |
+| :---------------------------------------------------------------------------------------------------------------------- |
 | it is a very good you can use filters talk to your best friends and others you can decorate your bitmoji and i just love the app if you are a major social media person you can take really nice pictures and really funny ones i'm post them on instagram but out of all these futures my favorite is |
 | this app is wonderfull i have got lots of charms here and also able to chat with friends and getting new charms is very interesting here in snapchat |
 | i love this app it is an awesome way to communicate has so many cool and fun features but i have one problem, my youtube my insta everything is working except for snapchat |
