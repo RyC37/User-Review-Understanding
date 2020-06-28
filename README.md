@@ -15,10 +15,10 @@ Help product owners to understand user needs, by grouping and counting the pros 
 1. **Input:** user reviews in `txt` or `csv` format, 
 2. **Sentence segmentation:** Split each review into sentences using period
 3. **Sentiment Analysis:** Identify if a sentence is positive or negative, and split by sentiment. Used [Textblob](https://textblob.readthedocs.io/en/dev/) 
-4. **Sentence Embedding: **Embed sentences into vectors which capture the feature of sentences. Used [Infersent by Facebook](https://github.com/facebookresearch/InferSent)
+4. **Sentence Embedding:** Embed sentences into vectors which capture the feature of sentences. Used [Infersent by Facebook](https://github.com/facebookresearch/InferSent)
 5. **Clustering:** Clustered embeded sentences within positive and negative groups. Used [Agglomerative Clustering](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html)
 6. **Cluster Summarization:** To be finished
-7. **Summary: ** Clustered pros and cons with counts.
+7. **Summary:** Clustered pros and cons with counts.
 
 
 
@@ -34,7 +34,7 @@ Python3 main.py
 
 **1. Good cases in Positive Feedbacks**
 
-| Topic 1 - Love the filters                                   |
+| <P>Topic 1 - Love the filters</p>                            |
 | ------------------------------------------------------------ |
 | great filters great details i love snapchat so much but idk how to do streaks |
 | although at times it randomly changes filters mostly your favorite one but nonetheless, its a really really great app😊😍 |
