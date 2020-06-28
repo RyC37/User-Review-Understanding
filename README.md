@@ -34,6 +34,7 @@ Python3 main.py
 
 **1. Good cases in Positive Feedbacks**
 
+<div style="width: 60%">
 | Topic 1 - Love the filters                                   |
 | :----------------------------------------------------------- |
 | great filters great details i love snapchat so much but idk how to do streaks |
@@ -61,7 +62,7 @@ Python3 main.py
 | snap chat is very amazing it plays a roll in my life it cheers me when i am down it makes me enjoy my phone time it is worth your time if you don't have this app you living in the past |
 | this app is amazing it is very social you can talk to friends you can play games with friends and you can have a party together really fun if you want to follow me my name is chloe |
 | his app is fantastic ! i love talking to all my friends and taking photos and making funny videos this app is very useful but on the other side it takes a lot of space on your phone |
-
+</div>
 **2. Bad Cases in Positive Feedbacks**
 
 | Problem 1 - Failed to spit the long sentence                 |
