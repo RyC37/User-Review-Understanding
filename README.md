@@ -1,7 +1,3 @@
-# User-Review-Understanding
-
-
-
 ## Project Goal
 
 Help product owners to understand user needs, by grouping and counting the pros and cons identified in a large number of user reviews.
