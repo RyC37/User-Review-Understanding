@@ -28,7 +28,7 @@ def preprocess(s):
         The processed sentence.
     """
     s = s.lower()
-    if s == '' or len(s) < 10:
+    if s == '' or len(s) < 10 or len(s) > 200:
         return None
     else:
         while s[0] == ' ':
@@ -53,7 +53,7 @@ def cluster(model, df, threshold, thrd, positive=True):
         df_ = df[df['polarity'] > thrd].copy()
     else:
         df_ = df[df['polarity'] < thrd].copy()
-    embed = model.encode(df_['review'].values, bsize=128, tokenize=False, verbose=True)
+    embed = model.encode(df_['review'].values)
     clust = AgglomerativeClustering(n_clusters=None,distance_threshold=threshold).fit(embed)
     df_['cluster'] = clust.labels_
     return df_.sort_values(by='cluster').reset_index(drop=True)

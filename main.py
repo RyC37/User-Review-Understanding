@@ -3,27 +3,17 @@
 
 import argparse
 from utils import *
-from models import InferSent
 from textblob import TextBlob
 import itertools
+from sentence_transformers import SentenceTransformer
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--fpath', type=str, default='', help='The relative path of data.')
+parser.add_argument('--fpath', type=str, default='../../data/snapchat_reviews.csv', help='The relative path of data.')
 parser.add_argument('--cuda', type=bool, default=False, help='Decide use cuda or not.')
-parser.add_argument('--model_version', type=int, default=1, help='Model version, 1 or 2.')
 opt = parser.parse_args()
 
 # Load model
-model_version = opt.model_version
-MODEL_PATH = "encoder/infersent%s.pkl" % model_version
-params_model = {'bsize': 64, 'word_emb_dim': 300, 'enc_lstm_dim': 2048,
-                'pool_type': 'max', 'dpout_model': 0.0, 'version': model_version}
-model = InferSent(params_model)
-model.load_state_dict(torch.load(MODEL_PATH))
-model = model.cuda() if opt.cuda else model
-W2V_PATH = 'GloVe/glove.840B.300d.txt' if opt.model_version == 1 else 'fastText/crawl-300d-2M.vec'
-model.set_w2v_path(W2V_PATH)
-model.build_vocab_k_words(K=100000)
+model = SentenceTransformer('bert-large-nli-stsb-mean-tokens')
 
 # Load data
 reviews = load_data(opt.fpath)
@@ -41,8 +31,7 @@ for r in rp:
 rp_df = pd.DataFrame(rp_sentiment, columns=['review','polarity','subjectivity'])
 
 # Embedding
-pos = cluster(model, rp_df,3,0.2,True)
-neg = cluster(model, rp_df,3,-0.2,False)
-pos.to_csv('output/pos_review_clustered.csv',index=False)
-neg.to_csv('output/neg_review_clustered.csv',index=False)
-
+pos = cluster(model, rp_df, 20, 0.2, True)
+neg = cluster(model, rp_df, 20, -0.2, False)
+pos.to_csv('result/pos_review_clustered.csv',index=False)
+neg.to_csv('result/neg_review_clustered.csv',index=False)
