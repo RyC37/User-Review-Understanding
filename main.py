@@ -17,7 +17,8 @@ model = SentenceTransformer('bert-large-nli-stsb-mean-tokens')
 
 # Load data
 reviews = load_data(opt.fpath)
-rs = reviews['Review Text'].sample(n=2000).str.split(pat='.').values
+rs = reviews['Review Text'].head(2000).values
+rs = [split_into_sentences(r) for r in rs]
 rs = [r for r in rs if type(r) != float]
 rl = list(itertools.chain.from_iterable(rs))
 rp = [st for st in [preprocess(s) for s in rl] if st != None]
