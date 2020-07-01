@@ -24,6 +24,50 @@ Help product owners to understand user needs, by grouping and counting the pros 
 Python3 main.py
 ```
 
+
+
+## Progress
+
+**Part1 - Research**
+
+* [x] Pre-processing
+* [x] Sentence Segmentation
+* [x] Sentence Embedding
+* [ ] Clustering
+  * [x] Agglomerative Clustering
+  * [ ] KNN Clustering
+* [ ] Clustering Filter
+  * [ ] Evaluation of clusters
+  * [ ] TFIDF for cluster filtering (find clusters with unique keywords)
+* [ ] Sentiment Analysis
+  * [x] Textbolb
+  * [ ] Improve Accurarcy
+* [ ] Keyword Sentiment
+* [ ] Cluster Summarization
+
+**Part2 - Product **
+
+* [ ] Product Design
+  * [ ] Product Scope
+  * [ ] Product Document
+  * [ ] Algorithm Evolution Logic
+* [ ] Interface Design
+
+**Part3 - Engineer**
+
+* [ ] Architecture Design
+* [ ] Machine Learning Algorithm API
+  * [ ] Summary
+  * [ ] Keyword Sentiment
+  * [ ] Sentiment Distribution
+  * [ ] Sentiment Synamics
+  * [ ] Emerging Needs
+  * [ ] Suggestions
+* [ ] Front-end Dev
+* [ ] Backend Dev
+
+
+
 ## Results
 
 **1. Good cases in Positive Feedbacks**
@@ -85,44 +129,3 @@ Python3 main.py
 | this is great app but lots of bugs in this version it gets freeze i have to open it again several times |
 | this app makes me upset all beautiful filter have gone please reload that heratcrown filter 🙏 |
 
-
-
-## Progress
-
-**Part1 - Research**
-
-* [x] Pre-processing
-* [x] Sentence Segmentation
-* [x] Sentence Embedding
-* [ ] Clustering
-  * [x] Agglomerative Clustering
-  * [ ] KNN Clustering
-* [ ] Clustering Filter
-  * [ ] Evaluation of clusters
-  * [ ] TFIDF for cluster filtering (find clusters with unique keywords)
-* [ ] Sentiment Analysis
-  * [x] Textbolb
-  * [ ] Improve Accurarcy
-* [ ] Keyword Sentiment
-* [ ] Cluster Summarization
-
-**Part2 - Product **
-
-* [ ] Product Design
-  * [ ] Product Scope
-  * [ ] Product Document
-  * [ ] Algorithm Evolution Logic
-* [ ] Interface Design
-
-**Part3 - Engineer**
-
-* [ ] Architecture Design
-* [ ] Machine Learning Algorithm API
-  * [ ] Summary
-  * [ ] Keyword Sentiment
-  * [ ] Sentiment Distribution
-  * [ ] Sentiment Synamics
-  * [ ] Emerging Needs
-  * [ ] Suggestions
-* [ ] Front-end Dev
-* [ ] Backend Dev
