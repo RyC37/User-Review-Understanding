@@ -45,7 +45,7 @@ Python3 main.py
 * [ ] Keyword Sentiment
 * [ ] Cluster Summarization
 
-**Part2 - Product**
+**Part2 - Product Design**
 
 * [ ] Product Design
   * [ ] Product Scope
@@ -53,7 +53,7 @@ Python3 main.py
   * [ ] Algorithm Evolution Logic
 * [ ] Interface Design
 
-**Part3 - Engineer**
+**Part3 - Engineering**
 
 * [ ] Architecture Design
 * [ ] Machine Learning Algorithm API
