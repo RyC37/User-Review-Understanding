@@ -84,3 +84,28 @@ Python3 main.py
 | best app for texting and photos but needs some bugs fixed still |
 | this is great app but lots of bugs in this version it gets freeze i have to open it again several times |
 | this app makes me upset all beautiful filter have gone please reload that heratcrown filter 🙏 |
+
+
+
+## Progress
+
+**Part1 - Research**
+
+* [x] Pre-processing
+* [x] Sentence Segmentation
+* [x] Sentence Embedding
+* [x] Agglomerative Clustering
+* [ ] KNN Clustering
+* [ ] Evaluation of clusters
+* [ ] TFIDF for cluster filtering (find clusters with unique keywords)
+* [ ] Sentiment Analysis (Accurarcy is the major consideration)
+* [ ] Sentiment based on keywords (Design, function, messaging)
+* [ ] Cluster Summarization
+
+**Part2 - Engineering**
+
+* [ ] Product Design
+* [ ] Interface Design
+* [ ] Machine Learning Algorithm API
+* [ ] Front-end Dev
+* [ ] Backend Dev
