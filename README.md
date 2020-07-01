@@ -35,7 +35,7 @@ Python3 main.py
 * [x] Sentence Embedding
 * [ ] Clustering
   * [x] Agglomerative Clustering
-  * [ ] KNN Clustering
+  * [ ] K means Clustering
 * [ ] Clustering Filter
   * [ ] Evaluation of clusters
   * [ ] TFIDF for cluster filtering (find clusters with unique keywords)
