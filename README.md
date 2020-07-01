@@ -42,6 +42,7 @@ Python3 main.py
 * [ ] Sentiment Analysis
   * [x] Textbolb
   * [ ] Improve Accurarcy
+  * [ ] Evaluate Accurarcy
 * [ ] Keyword Sentiment
 * [ ] Cluster Summarization
 
