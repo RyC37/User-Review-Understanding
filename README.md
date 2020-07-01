@@ -45,7 +45,7 @@ Python3 main.py
 * [ ] Keyword Sentiment
 * [ ] Cluster Summarization
 
-**Part2 - Product **
+**Part2 - Product**
 
 * [ ] Product Design
   * [ ] Product Scope
