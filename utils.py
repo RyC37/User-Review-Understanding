@@ -3,6 +3,11 @@
 
 import pandas as pd
 from sklearn.cluster import AgglomerativeClustering
+from sklearn.decomposition import PCA
+import re
+import numpy as np
+!pip install hdbscan
+import hdbscan
 
 def load_data(path):
     """
@@ -34,7 +39,6 @@ def preprocess(s):
         while s[0] == ' ':
             s = s[1:]
         return s
-
 
 digits   = "([0-9])"
 alphabets= "([A-Za-z])"
@@ -71,7 +75,7 @@ def split_into_sentences(text):
     sentences = [s.strip() for s in sentences]
     return sentences
 
-def cluster(model, df, threshold, thrd, positive=True, components=0):
+def cluster(model, df, threshold, thrd, positive=True, components=0, method='HBDSCAN'):
     '''
     Clustering embedded sentences.
     
@@ -100,6 +104,9 @@ def cluster(model, df, threshold, thrd, positive=True, components=0):
         pca = PCA(n_components=components)
         embed = pca.fit_transform(x)
     # Clustering
-    clust = AgglomerativeClustering(n_clusters=None,distance_threshold=threshold).fit(embed)
+    if method == 'AC'
+        clust = AgglomerativeClustering(n_clusters=None,distance_threshold=threshold).fit(embed)
+    elif method == 'DBSCAN'
+        clust = hdbscan.HDBSCAN(min_cluster_size=2, min_samples=1, alpha=1.3).fit(embed)
     df_['cluster'] = clust.labels_
     return df_.sort_values(by='cluster').reset_index(drop=True)
