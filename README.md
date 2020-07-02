@@ -37,7 +37,7 @@ Python3 main.py
   * [x] Agglomerative Clustering
   * [x] HDBSCAN
     * [ ] HDBSCAN Parameter Tuning
-* [ ] Clustering Filter
+* [ ] Cluster Analysis (Filter)
   * [ ] Evaluation of clusters
   * [ ] TFIDF for cluster filtering (find clusters with unique keywords)
 * [ ] Sentiment Analysis
