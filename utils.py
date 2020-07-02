@@ -86,6 +86,7 @@ def cluster(model, df, threshold, thrd, positive=True, components=0, method='HBD
         thrd        (float): The threshold for deciding if a review is positive or negative.
         positive    (bool):  Decide if clustering positive reviews or negative reviews.
         components  (int):   If components > 0, apply PCA with 'n_components=components'.
+        method      (string):Decide which clustering algorithm to use.
     Return: 
         The dataframe with cluster id assigned to each review.
     '''
