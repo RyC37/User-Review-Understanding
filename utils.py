@@ -106,7 +106,7 @@ def cluster(model, df, threshold, thrd, positive=True, components=0, method='HBD
     # Clustering
     if method == 'AC'
         clust = AgglomerativeClustering(n_clusters=None,distance_threshold=threshold).fit(embed)
-    elif method == 'DBSCAN'
+    elif method == 'HDBSCAN'
         clust = hdbscan.HDBSCAN(min_cluster_size=2, min_samples=1, alpha=1.3).fit(embed)
     df_['cluster'] = clust.labels_
     return df_.sort_values(by='cluster').reset_index(drop=True)
