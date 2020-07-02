@@ -35,7 +35,8 @@ Python3 main.py
 * [x] Sentence Embedding
 * [ ] Clustering
   * [x] Agglomerative Clustering
-  * [ ] K means Clustering
+  * [x] HDBSCAN
+    * [ ] HDBSCAN Parameter Tuning
 * [ ] Clustering Filter
   * [ ] Evaluation of clusters
   * [ ] TFIDF for cluster filtering (find clusters with unique keywords)
@@ -45,6 +46,7 @@ Python3 main.py
   * [ ] Evaluate Accurarcy
 * [ ] Keyword Sentiment
 * [ ] Cluster Summarization
+  * [ ] Pick sentences with embedding closest to centroid
 
 **Part2 - Product Design**
 
