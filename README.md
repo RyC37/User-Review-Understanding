@@ -131,4 +131,3 @@ Python3 main.py
 | best app for texting and photos but needs some bugs fixed still |
 | this is great app but lots of bugs in this version it gets freeze i have to open it again several times |
 | this app makes me upset all beautiful filter have gone please reload that heratcrown filter 🙏 |
-
