@@ -8,6 +8,16 @@ import re
 import numpy as np
 !pip install hdbscan
 import hdbscan
+import gensim
+from gensim.utils import simple_preprocess
+from gensim.parsing.preprocessing import STOPWORDS
+from nltk.stem import WordNetLemmatizer
+import nltk
+nltk.download('wordnet')
+from sentence_transformers import SentenceTransformer
+bert_large_nli = SentenceTransformer('bert-large-nli-stsb-mean-tokens')
+
+
 
 def load_data(path):
     """
@@ -22,6 +32,45 @@ def load_data(path):
 
     return input_file
 
+def stemming(word):
+    """
+    Stemming a word
+
+    Parameters:
+        word (string): The word to be stemmed.
+    Return:
+        Stemmed word.
+    """
+    return stemmer.stem(word)
+
+def lemmentize(word):
+    """
+    Lemmentizing a word
+
+    Parameters:
+        word (string): The word to be lemmentized.
+    Return:
+        Lemmentized word.
+    """
+    return WordNetLemmatizer().lemmatize(word, pos='v')
+
+def remove_stopwords(sentence, output='list'):
+    """
+    Remove stopwords in a sentence, and output a list of words or a sentence.
+
+    Parameters:
+        sentence (string): The sentence to be processed.
+        output   (string): The output format. 'list' or 'string'.
+    Return:
+        Lemmentized word.
+    """
+    result=[]
+    for token in gensim.utils.simple_preprocess(sentence) :
+        if token not in gensim.parsing.preprocessing.STOPWORDS and len(token) > 3:
+            result.append(token)
+    if output == 'string':
+        result = ' '.join(result)
+    return result
 
 def preprocess(s):
     """
@@ -49,6 +98,14 @@ acronyms = "([A-Z][.][A-Z][.](?:[A-Z][.])?)"
 websites = "[.](com|net|org|io|gov)"
 
 def split_into_sentences(text):
+    """
+    Split strings into sentences.
+
+    Parameters:
+        text (str): The string to be processed.
+    Return:
+        Processed string.
+    """
     text = " " + text + "  "
     text = text.replace("\n"," ")
     text = re.sub(prefixes,"\\1<prd>",text)
@@ -75,12 +132,56 @@ def split_into_sentences(text):
     sentences = [s.strip() for s in sentences]
     return sentences
 
-def cluster(model, df, threshold, thrd, positive=True, components=0, method='HBDSCAN'):
+
+def HDBSCAN(embeding, min_cluster_size, min_samples, alpha):
+    """
+    HDBSCAN Clustering.
+
+    Parameters:
+        embedding           (2D list): The embeddings to be processed.
+        min_cluster_size    (int): The minmum number of observations that could form a cluster.
+        min_samples         (int): The distance for group splitting.
+        alpha   
+    Return:
+        Cluster object.
+    """
+    clusters = hdbscan.HDBSCAN(min_cluster_size=min_cluster_size, \
+        min_samples=min_samples, alpha=alpha).fit(embeding)
+    return clusters
+
+def AC(embeding, n_clusters, distance):
+    """
+    Agglomerative Clustering.
+
+    Parameters:
+        embedding   (2D list): The embeddings to be processed.
+        n_clusters  (int): The number of clusters.
+        distance    (float): The distance for group splitting.   
+    Return:
+        Cluster object.
+    """
+    clusters = AgglomerativeClustering(n_clusters=n_clusters, \
+        distance_threshold=distance).fit(embeding)
+    return clusters
+
+def PCA(embeding, n_components):
+    x = pd.DataFrame(embeding)
+    pca = PCA(n_components=n_components)
+    return pca.fit_transform(x)
+
+def normalize(embedding):
+    f = np.array(embedding)
+    return (f - f.mean(axis=0)) / f.std(axis=0)
+
+def sentence_embedding(review_list):
+    embed = bert_large_nli.encode(review_list)
+    return embed
+
+def main(df, threshold, thrd, positive=True, components=0, method='HBDSCAN'):
     '''
     Clustering embedded sentences.
     
     Parameters:
-        model       (obj):   The sentence embedding model.
         df          (obj):   The dataframe that contains reviews.
         threshold   (float): The threshold for clustering distance.
         thrd        (float): The threshold for deciding if a review is positive or negative.
@@ -95,19 +196,18 @@ def cluster(model, df, threshold, thrd, positive=True, components=0, method='HBD
         df_ = df[df['polarity'] > thrd].copy()
     else:
         df_ = df[df['polarity'] < thrd].copy()
-    embed = model.encode(df_['review'].values)
+    
+    embed = sentence_embedding(df_['review'].values)
     # Normalize embedding
-    f = np.array(embed)
-    embed = (f - f.mean(axis=0)) / f.std(axis=0)
+    embed = normalize(embed)
     # PCA
     if components > 0:
-        x = pd.DataFrame(embed)
-        pca = PCA(n_components=components)
-        embed = pca.fit_transform(x)
+        embed = PCA(embed, components)
+
     # Clustering
     if method == 'AC':
-        clust = AgglomerativeClustering(n_clusters=None,distance_threshold=threshold).fit(embed)
+        clust = AC(embed, None, threshold)
     elif method == 'HDBSCAN':
-        clust = hdbscan.HDBSCAN(min_cluster_size=2, min_samples=1, alpha=1.3).fit(embed)
+        clust = HDBSCAN(embed, 2, 1, 1.3)
     df_['cluster'] = clust.labels_
     return df_.sort_values(by='cluster').reset_index(drop=True)
