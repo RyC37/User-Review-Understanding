@@ -72,6 +72,35 @@ def remove_stopwords(sentence, output='list'):
         result = ' '.join(result)
     return result
 
+def word_dict(corpus_token, no_below, no_above, keep_n):
+    """
+    Turn an array of tokens into word search dict. Key is index, value if the word.
+    
+    Parameters:
+        corpus_token (array of lists): The corpus with each document being tokenized.
+        no_below     (int):            Filter out words that appear less than 'no_below' times
+        no_above     (float):          Filter out words that apprear more than `no_above` of all documents
+        keep_n       (int):            Keep only the first keep_n most frequent tokens.
+    Return:
+        The word dictionary indexed by numbers.
+    """
+    dictionary = gensim.corpora.Dictionary(corpus_token)
+    dictionary.filter_extremes(no_below=15, no_above=0.1, keep_n=100000)
+    return dictionary
+
+def bag_of_words(corpus_token, dictionary):
+    """
+    Turn an array of tokens into bag of words.
+    
+    Parameters:
+        corpus_token (array of lists): The corpus with each document being tokenized.
+        dictionary   (dict object):    The output of 'word_dict()'.
+    Return:
+        Courpus bag of words representation.
+    """
+    bow_corpus = [dictionary.doc2bow(d) for d in processed_docs]
+    return bow_corpus
+
 def preprocess(s):
     """
     Formatting the review data by lowercase conversion, trimming space, and filter by length.
@@ -133,47 +162,72 @@ def split_into_sentences(text):
     return sentences
 
 
-def HDBSCAN(embeding, min_cluster_size, min_samples, alpha):
+def HDBSCAN(embedding, min_cluster_size, min_samples, alpha):
     """
     HDBSCAN Clustering.
 
     Parameters:
-        embedding           (2D list): The embeddings to be processed.
-        min_cluster_size    (int): The minmum number of observations that could form a cluster.
-        min_samples         (int): The distance for group splitting.
+        embedding        (Array of list): The embeddings to be processed.
+        min_cluster_size (int):           The minmum number of observations that could form a cluster.
+        min_samples      (int):           The distance for group splitting.
         alpha   
     Return:
         Cluster object.
     """
     clusters = hdbscan.HDBSCAN(min_cluster_size=min_cluster_size, \
-        min_samples=min_samples, alpha=alpha).fit(embeding)
+        min_samples=min_samples, alpha=alpha).fit(embedding)
     return clusters
 
-def AC(embeding, n_clusters, distance):
+def AC(embedding, n_clusters, distance):
     """
     Agglomerative Clustering.
 
     Parameters:
-        embedding   (2D list): The embeddings to be processed.
-        n_clusters  (int): The number of clusters.
-        distance    (float): The distance for group splitting.   
+        embedding  (Array of list): The embeddings to be processed.
+        n_clusters (int):           The number of clusters.
+        distance   (float):         The distance for group splitting.   
     Return:
         Cluster object.
     """
     clusters = AgglomerativeClustering(n_clusters=n_clusters, \
-        distance_threshold=distance).fit(embeding)
+        distance_threshold=distance).fit(embedding)
     return clusters
 
-def PCA(embeding, n_components):
-    x = pd.DataFrame(embeding)
+def PCA(embedding, n_components):
+    """
+    Principle component analysis.
+
+    Parameters:
+        embedding   (Array of list):The embeddings to be processed.
+        n_components(int):          The number of features generated.
+    Return:
+        Principle components.
+    """
+    x = pd.DataFrame(embedding)
     pca = PCA(n_components=n_components)
     return pca.fit_transform(x)
 
 def normalize(embedding):
+    """
+    Normalize each feature (column), just so it follows standard normal distribution.
+
+    Parameters:
+        embedding  (Array of list): The embeddings to be processed.
+    Return:
+        Normalized embedding.
+    """
     f = np.array(embedding)
     return (f - f.mean(axis=0)) / f.std(axis=0)
 
 def sentence_embedding(review_list):
+    """
+    Embedding sentence using BERT.
+
+    Parameters:
+        review_list (list): List of reviews.
+    Output:
+        Embedded reviews. Matrix with dimension (n, 1024)
+    """
     embed = bert_large_nli.encode(review_list)
     return embed
 
