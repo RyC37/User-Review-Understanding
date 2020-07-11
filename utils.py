@@ -6,7 +6,7 @@ from sklearn.cluster import AgglomerativeClustering
 from sklearn.decomposition import PCA
 import re
 import numpy as np
-!pip install hdbscan
+# !pip install hdbscan
 import hdbscan
 import gensim
 from gensim.utils import simple_preprocess
@@ -14,6 +14,8 @@ from gensim.parsing.preprocessing import STOPWORDS
 from nltk.stem import WordNetLemmatizer
 import nltk
 nltk.download('wordnet')
+from nltk.stem import SnowballStemmer
+stemmer = SnowballStemmer("english")
 from sentence_transformers import SentenceTransformer
 bert_large_nli = SentenceTransformer('bert-large-nli-stsb-mean-tokens')
 
@@ -96,7 +98,7 @@ def bag_of_words(corpus_token, dictionary):
     Return:
         Courpus bag of words representation.
     """
-    bow_corpus = [dictionary.doc2bow(d) for d in processed_docs]
+    bow_corpus = [dictionary.doc2bow(d) for d in corpus_token]
     return bow_corpus
 
 def tfidf(bow_corpus):
