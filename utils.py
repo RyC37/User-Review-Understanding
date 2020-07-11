@@ -17,8 +17,6 @@ nltk.download('wordnet')
 from sentence_transformers import SentenceTransformer
 bert_large_nli = SentenceTransformer('bert-large-nli-stsb-mean-tokens')
 
-
-
 def load_data(path):
     """
     Load Dataset from File
@@ -101,6 +99,33 @@ def bag_of_words(corpus_token, dictionary):
     bow_corpus = [dictionary.doc2bow(d) for d in processed_docs]
     return bow_corpus
 
+def tfidf(bow_corpus):
+    """
+    Encode bag of words using TF-IDF.
+    Parameters:
+        bow_corpus (object): Courpus bag of words representation.
+    Return:
+        Bag of words encoded by TF-IDF.
+    """
+    tfidf = gensim.models.TfidfModel(bow_corpus)
+    return [tfidf[s] for s in bow_corpus]
+
+def LDA(corpus, dictionary, num_topics=10, passes=50):
+    """
+    LDA model, topic modeling.
+    
+    Parameters:
+        corpus      (object): Encoded corpus (bag_of_words or tfidf).
+        dictionary  (object): The word dictionary indexed by numbers, output of `word_dict()`.
+        num_topics  (int):    The number of topics.
+        passes      (int):    The epochs of training.
+    """
+    lda_model = gensim.models.LdaModel(corpus, num_topics = num_topics, 
+                                   id2word = dictionary, passes = passes)
+    for idx, topic in lda_model.print_topics(-1):
+        print("Topic: {} \nWords: {}".format(topic, idx ),"\n")
+    return lda_model
+
 def preprocess(s):
     """
     Formatting the review data by lowercase conversion, trimming space, and filter by length.
@@ -160,7 +185,6 @@ def split_into_sentences(text):
     sentences = sentences[:-1]
     sentences = [s.strip() for s in sentences]
     return sentences
-
 
 def HDBSCAN(embedding, min_cluster_size, min_samples, alpha):
     """
