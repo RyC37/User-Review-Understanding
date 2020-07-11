@@ -96,7 +96,9 @@ def bag_of_words(corpus_token, dictionary):
         corpus_token (array of lists): The corpus with each document being tokenized.
         dictionary   (dict object):    The output of 'word_dict()'.
     Return:
-        Courpus bag of words representation.
+        Courpus bag of words representation. The result is an array of lists of tuple
+        in forms of (12, 1). The first value is word index in dictionary, the second
+        value if the count of appearance in the document.
     """
     bow_corpus = [dictionary.doc2bow(d) for d in corpus_token]
     return bow_corpus
@@ -107,7 +109,9 @@ def tfidf(bow_corpus):
     Parameters:
         bow_corpus (object): Courpus bag of words representation.
     Return:
-        Bag of words encoded by TF-IDF.
+        Bag of words encoded by TF-IDF. The result is an array of lists of tuple
+        in forms of (12, 0.56). The first value is word index in dictionary, the second
+        value if the weight of the word calculated by TF-IDF.
     """
     tfidf = gensim.models.TfidfModel(bow_corpus)
     return [tfidf[s] for s in bow_corpus]
@@ -257,7 +261,7 @@ def sentence_embedding(review_list):
     embed = bert_large_nli.encode(review_list)
     return embed
 
-def main(df, threshold, thrd, positive=True, components=0, method='HBDSCAN'):
+def main(df, threshold, thrd, positive=True, components=0, method='HDBSCAN'):
     '''
     Clustering embedded sentences.
     
