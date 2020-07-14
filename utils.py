@@ -43,12 +43,12 @@ def stemming(word):
     """
     return stemmer.stem(word)
 
-def lemmentize(word):
+def lemmatize(word):
     """
     Lemmentizing a word
 
     Parameters:
-        word (string): The word to be lemmentized.
+        word (string): The word to be lemmatized.
     Return:
         Lemmentized word.
     """
@@ -223,7 +223,7 @@ def AC(embedding, n_clusters, distance):
         distance_threshold=distance).fit(embedding)
     return clusters
 
-def PCA(embedding, n_components):
+def reduce_dimension(embedding, n_components):
     """
     Principle component analysis.
 
@@ -286,7 +286,7 @@ def main(df, threshold, thrd, positive=True, components=0, method='HDBSCAN'):
     embed = normalize(embed)
     # PCA
     if components > 0:
-        embed = PCA(embed, components)
+        embed = reduce_dimension(embed, components)
 
     # Clustering
     if method == 'AC':
